@@ -36,6 +36,7 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
             }
 
             var author = await _context.Author
+                .Include(a => a.Books)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (author == null)
             {

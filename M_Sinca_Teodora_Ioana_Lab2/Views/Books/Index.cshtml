@@ -1,4 +1,4 @@
-﻿@model IEnumerable<M_Sinca_Teodora_Ioana_Lab2.Models.Book>
+﻿@model IEnumerable<M_Sinca_Teodora_Ioana_Lab2.Models.BookViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,21 +9,32 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by title: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSortParm"]">@Html.DisplayNameFor(model => model.Title)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author)
+                Author
+                </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
+              Genre
+              </th>
             <th></th>
         </tr>
     </thead>
@@ -34,9 +45,9 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
                 <td>
-                    @if (item.Author != null)
+                    @if (item.FullName != null)
                     {
-                        @($"{item.Author.FirstName} {item.Author.LastName}")
+                        @($"{item.FullName}")
                     }
                     else
                     {
@@ -48,9 +59,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre.Name)
-            </td>
+
+            @*  <td>
+                 @Html.DisplayFor(modelItem => item.Genre.Name)
+                </td> *@
+              
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
