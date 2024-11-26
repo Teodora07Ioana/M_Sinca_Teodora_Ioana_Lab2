@@ -19,6 +19,11 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Data
         public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.Author> Author { get; set; } = default!;
         public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.Customer> Customer { get; set; } = default!;
         public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.Genre> Genre { get; set; } = default!;
+
+        public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.Order> Order { get; set; } = default!;
+
+        public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.Publisher> Publisher { get; set; } = default!;
+        public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.PublishedBook> PublishedBook { get; set; } = default!;
     }
 }
 
