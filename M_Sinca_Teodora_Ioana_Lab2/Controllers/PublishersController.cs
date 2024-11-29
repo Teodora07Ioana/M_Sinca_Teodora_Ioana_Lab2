@@ -13,9 +13,9 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
 {
     public class PublishersController : Controller
     {
-        private readonly M_Sinca_Teodora_Ioana_Lab2Context _context;
+        private readonly MyLibraryContext _context;
 
-        public PublishersController(M_Sinca_Teodora_Ioana_Lab2Context context)
+        public PublishersController(MyLibraryContext context)
         {
             _context = context;
         }

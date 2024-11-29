@@ -10,10 +10,10 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly M_Sinca_Teodora_Ioana_Lab2Context _context;
+        private readonly MyLibraryContext _context;
 
 
-        public HomeController(M_Sinca_Teodora_Ioana_Lab2Context context, ILogger<HomeController> logger)
+        public HomeController(MyLibraryContext context, ILogger<HomeController> logger)
         {
             _context = context;
             _logger = logger;

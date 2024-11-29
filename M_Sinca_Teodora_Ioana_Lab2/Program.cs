@@ -1,10 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using M_Sinca_Teodora_Ioana_Lab2;
 using M_Sinca_Teodora_Ioana_Lab2.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<M_Sinca_Teodora_Ioana_Lab2Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("M_Sinca_Teodora_Ioana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'M_Sinca_Teodora_Ioana_Lab2Context' not found.")));
+//builder.Services.AddDbContext<MyLibraryContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("M_Sinca_Teodora_Ioana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'M_Sinca_Teodora_Ioana_Lab2Context' not found.")));
+
+
+builder.Services.AddDbContext<MyLibraryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("M_Sinca_Teodora_Ioana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'LibraryWebAPIContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace M_Sinca_Teodora_Ioana_Lab2.Migrations
 {
-    [DbContext(typeof(M_Sinca_Teodora_Ioana_Lab2Context))]
+    [DbContext(typeof(MyLibraryContext))]
     [Migration("20241124191253_AddAuthor")]
     partial class AddAuthor
     {

@@ -12,9 +12,9 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
 {
     public class AuthorsController : Controller
     {
-        private readonly M_Sinca_Teodora_Ioana_Lab2Context _context;
+        private readonly MyLibraryContext _context;
 
-        public AuthorsController(M_Sinca_Teodora_Ioana_Lab2Context context)
+        public AuthorsController(MyLibraryContext context)
         {
             _context = context;
         }

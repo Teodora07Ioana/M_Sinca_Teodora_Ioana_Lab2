@@ -12,9 +12,9 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
 {
     public class BooksController : Controller
     {
-        private readonly M_Sinca_Teodora_Ioana_Lab2Context _context;
+        private readonly MyLibraryContext _context;
 
-        public BooksController(M_Sinca_Teodora_Ioana_Lab2Context context)
+        public BooksController(MyLibraryContext context)
         {
             _context = context;
         }

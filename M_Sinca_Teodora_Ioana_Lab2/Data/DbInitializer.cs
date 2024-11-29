@@ -8,7 +8,7 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Data
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new M_Sinca_Teodora_Ioana_Lab2Context(serviceProvider.GetRequiredService<DbContextOptions<M_Sinca_Teodora_Ioana_Lab2Context>>()))
+            using (var context = new MyLibraryContext(serviceProvider.GetRequiredService<DbContextOptions<MyLibraryContext>>()))
             {
                 // Verifică dacă există deja cărți în baza de date
                 if (context.Book.Any())

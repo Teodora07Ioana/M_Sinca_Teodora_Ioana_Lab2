@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using M_Sinca_Teodora_Ioana_Lab2.Models;
 
-namespace M_Sinca_Teodora_Ioana_Lab2.Data
+namespace M_Sinca_Teodora_Ioana_Lab2
 {
-    public class M_Sinca_Teodora_Ioana_Lab2Context : DbContext
+    public class MyLibraryContext : DbContext
     {
-        public M_Sinca_Teodora_Ioana_Lab2Context (DbContextOptions<M_Sinca_Teodora_Ioana_Lab2Context> options)
+        public MyLibraryContext (DbContextOptions<MyLibraryContext> options)
             : base(options)
         {
         }
@@ -24,6 +24,8 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Data
 
         public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.Publisher> Publisher { get; set; } = default!;
         public DbSet<M_Sinca_Teodora_Ioana_Lab2.Models.PublishedBook> PublishedBook { get; set; } = default!;
+
+        public DbSet<LibraryModel.Models.City> City { get; set; } = default!;
     }
 }
 
