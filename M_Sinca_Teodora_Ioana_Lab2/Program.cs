@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using M_Sinca_Teodora_Ioana_Lab2;
 using M_Sinca_Teodora_Ioana_Lab2.Data;
+using M_Sinca_Teodora_Ioana_Lab2.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<MyLibraryContext>(options =>
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<MyLibraryContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -41,5 +44,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<ChatHub>("/Chat");
 
 app.Run();

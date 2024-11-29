@@ -47,5 +47,10 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Chat()
+        {
+            return View();
+        }
     }
 }
