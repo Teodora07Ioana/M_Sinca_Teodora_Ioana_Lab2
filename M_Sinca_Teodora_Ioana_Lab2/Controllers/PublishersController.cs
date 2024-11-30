@@ -8,9 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using M_Sinca_Teodora_Ioana_Lab2.Data;
 using M_Sinca_Teodora_Ioana_Lab2.Models;
 using M_Sinca_Teodora_Ioana_Lab2.Models.LibraryViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
 {
+    [Authorize(Policy = "OnlySales")]
+
     public class PublishersController : Controller
     {
         private readonly MyLibraryContext _context;
