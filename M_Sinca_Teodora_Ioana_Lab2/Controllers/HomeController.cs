@@ -52,5 +52,10 @@ namespace M_Sinca_Teodora_Ioana_Lab2.Controllers
         {
             return View();
         }
+
+        public IActionResult Notification()
+        {
+            return View();
+        }
     }
 }
